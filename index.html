@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="por-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de controle</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="CABECALHO">
+        <div id="logo" style="background: #052B5D;"><p>REYTEK </p> </div>
+    
+    <div class="column1 margin-top">
+
+      <img id="img1" src="conf.png">
+      <span class="titulo1">Configurações</span>
+    </div>
+<div class="column2 margin-top" >
+      <img id="img2" src="rel.png">
+      <span class="titulo2">Relatórios</span>
+    </div> 
+    <div class="column3 margin-top" >
+
+    <img id="img3" src="cam.png">
+      <span class="titulo3">Fornecedores</span>
+    </div>
+
+    <div class="column4 margin-top">
+
+      <img id="img4" src="sair.png">
+      <span style="centralizar" class="titulo4">Sair</span>
+    </div>
+      
+    </header>
+    <main>
+
+
+        <div style="background-color: #A6A6A6; padding-bottom: -20%; padding-top: 5%;">
+             <p id="painel">PAINEL DE CONTROLE </p>
+        <div class="buttons">
+           
+
+           <div class="columnP" style="background-color: #2C3531">
+        <img id="prod" src="prod.png">          
+    <button  id="cadproduto"  type="button" data-toggle="modal" data-target="#modalProduto">CADASTRAR NOVO PRODUTO</button></div>
+
+      
+         
+    <div class="columnB" style="background-color: #2C3531">
+        <img id="pesq" src="pesq.png">          
+     <button style="position: centralizar;" id="busca" type="button"  data-toggle="modal" data-target="#modalPesquisa">CONSULTAR CLIENTES</button></div>
+            
+            <div class="columnC" style="background-color: #2C3531">
+        <img id="cliente" src="cliente.png">          
+            <button id="cadcliente" type="button"data-toggle="modal" data-target="#modalCliente">CADASTRAR NOVO CLIENTE</button></div>
+
+    <div class="columnD" style="background-color: #2C3531">
+        <img id="notafiscal" src="nota.png">      
+            <button id="nota" type="button">NOTAS FISCAIS</button></div>
+
+
+             <div class="columnE" style="background-color: #2C3531">
+        <img id="fat" src="fat.png"> 
+             <button id="faturamento" type="button">FATURAMENTO</button></div>
+
+ <div class="columnF" style="background-color: #2C3531">
+        <img id="venda" src="venda.png"> 
+            <button id="vendas" type="button">VENDAS</button> </div>
+
+        </div>
+</div>
+
+ <div class="modal fade" id="modalPesquisa">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title font-modal">Consultar Clientes</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                     <div class="modal-body">
+                        <form id="formPesquisa" onsubmit="pesquisarCliente()" action="#">
+                     <div class="row">
+                         <div class="col">
+                            <input type="text" class="form-control mb-2 mr-sm-2" id="pesquisa" placeholder="Pesquisar Cliente">
+                        </form>
+                        <input style="background-color: black" type="submit" class="btn btn-success float-right mt-2" value="Pesquisar">
+                    </div>
+                  </div>
+                </div>
+         </div>
+    </div>
+
+</div>
+        <div class="modal fade" id="modalCliente">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title font-modal">Cadastro de Cliente</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formCliente" onsubmit="cadastrarCliente()" action="#">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="nome-cliente" placeholder="Nome">
+                                </div>
+                                <div class="col">
+                                    <input type="email" class="form-control mb-2 mr-sm-2" id="email" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="tel" class="form-control mb-2 mr-sm-2" id="celular" placeholder="Celular">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="cpf" placeholder="CPF">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><input type="text" class="form-control mb-2 mr-sm-2" id="end-rua" placeholder="Endereço"></div>
+                            </div>    
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-numero" placeholder="Número">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-comp" placeholder="Complemento">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-bairro" placeholder="Bairro">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-cep" placeholder="CEP">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-cidade" placeholder="Cidade">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-estado" placeholder="Estado">
+                                </div>
+                            </div>
+                                <input style="background-color: black" type="submit" class="btn btn-success float-right mt-2" value="Cadastrar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalProduto">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title font-modal">Cadastro de Produto</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formProduto" onsubmit="cadastrarProduto()" action="#">
+                            <div class="row">
+                                <label for="endereco" class="form-group ml-3">Dados do produto: </label>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input style="width:200px" type="text" class="form-control mb-2 mr-sm-2" id="nome-prod" placeholder="Nome do produto">
+                                </div>
+            
+                            <div class="row">
+                                <div class="col">
+                                    <input style="margin-left:-50%" type="text" class="form-control mb-2 mr-sm-2" id="custounitario" placeholder="Custo unitário">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input style="margin-left: 15px; width:auto;" type="text" class="form-control mb-2 mr-sm-2" id="precovenda" placeholder="Preço de Venda">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="fornecedor" placeholder="Fornecedor">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="quantidade" placeholder="Quantidade">
+                                </div>
+                            </div>
+            
+                            </div>
+                                <input style="margin-left:-50%; background-color: black;" type="submit" class="btn btn-success float-right mt-2" value="Cadastrar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="script.js"></script>
+    </main>
+    <footer class="rodape">TODOS OS DIREITOS RESERVADOS ©VALESCA DANTAS</footer>
+</html>
